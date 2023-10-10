@@ -314,6 +314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPosition: 2
   yPosition: 2
+  xSpeed: 3
+  ySpeed: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

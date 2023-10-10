@@ -1,13 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using UnityEditor;
 using UnityEngine;
+using TMPro;
 
 public class collision : MonoBehaviour
 {
-    public float xPosition = -2f;
-    public float yPosition = -2f;
-    public float xSpeed = 1f;
-    public float ySpeed = 1f;
+    public float xPosition = 0f;
+    public float yPosition = 0f;
+    public float xSpeed = 2f;
+    public float ySpeed = 2f;
+    public TMP_Text scoreText;
+    public int leftScore = 0;
+    public int rightScore = 0;
+    void resetBall()
+    {
+        xPosition = 0f;
+        yPosition = 0f;
+        xSpeed = xSpeed * -1f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +37,25 @@ public class collision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Auw!");
         if (collision.gameObject.CompareTag("horizontalWall"))
         {
-            Debug.Log("my head or my feet");
             ySpeed = ySpeed * -1f;
         }
-        else if (collision.gameObject.CompareTag("verticalWall"))
+        else if (collision.gameObject.CompareTag("verticalL"))
         {
-            Debug.Log("my butt or my crotch");
-            xSpeed = xSpeed * -1f;
+            resetBall();
+            rightScore++;
+            scoreText.text = leftScore + " | " + rightScore;
+        }
+        else if (collision.gameObject.CompareTag("verticalR"))
+        {
+            resetBall();
+            leftScore++;
+            scoreText.text = leftScore + " | " + rightScore;
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            xSpeed = xSpeed * -1.1f;
         }
     }
-
 }
