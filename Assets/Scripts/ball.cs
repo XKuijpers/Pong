@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
-    public float xPosition = -2f;
-    public float yPosition = -2f;
-    public float xSpeed = 1f;
-    public float ySpeed = 1f;
+    public float xPosition = 0f;
+    public float yPosition = 0f;
+    public float xSpeed = 4f;
+    public float ySpeed = 4f;
 
     // Start is called before the first frame update
     void Start()

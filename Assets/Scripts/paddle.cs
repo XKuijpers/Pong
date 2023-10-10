@@ -23,11 +23,11 @@ public class paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(leftOrRight == "left")
+        if (leftOrRight == "left")
         {
             paddleControl(KeyCode.W, KeyCode.S);
         }
-        else if(leftOrRight == "right")
+        else if (leftOrRight == "right")
         {
             paddleControl(KeyCode.UpArrow, KeyCode.DownArrow);
         }

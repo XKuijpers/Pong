@@ -9,16 +9,18 @@ public class collision : MonoBehaviour
 {
     public float xPosition = 0f;
     public float yPosition = 0f;
-    public float xSpeed = 2f;
-    public float ySpeed = 2f;
+    public float xSpeed = 4f;
+    public float ySpeed = 4f;
     public TMP_Text scoreText;
     public int leftScore = 0;
     public int rightScore = 0;
+    public int winScore = 10;
     void resetBall()
     {
         xPosition = 0f;
-        yPosition = 0f;
-        xSpeed = xSpeed * -1f;
+        yPosition = Random.Range(-4f, 4f);
+        xSpeed = 4f;
+        ySpeed = 4f;
     }
 
     // Start is called before the first frame update
@@ -33,6 +35,18 @@ public class collision : MonoBehaviour
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
+        if (leftScore >= winScore)
+        {
+            scoreText.text = "Left player has won!";
+            xPosition = 0f;
+            yPosition = 0f;
+        }
+        else if (rightScore >= winScore)
+        {
+            scoreText.text = "Right player has won!";
+            xPosition = 0f;
+            yPosition = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
