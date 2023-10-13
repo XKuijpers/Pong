@@ -8,6 +8,8 @@ TagManager:
   - verticalWall
   - verticalL
   - verticalR
+  - atariBrick
+  - atariBall
   layers:
   - Default
   - TransparentFX

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pongBasic.unity
     guid: 8137f7c145c29eb4694f15bf6c88fb4c
+  - enabled: 1
+    path: Assets/Scenes/pongAtari.unity
+    guid: 9c3c35820a62f0744a40727d3bdd098c
   m_configObjects: {}

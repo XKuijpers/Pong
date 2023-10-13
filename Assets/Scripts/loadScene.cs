@@ -14,4 +14,9 @@ public class loadScene : MonoBehaviour
     {
         SceneManager.LoadScene("pongTwist");
     }
+
+    public void loadAtariMode()
+    {
+        SceneManager.LoadScene("pongAtari");
+    }
 }
