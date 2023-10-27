@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class loadScene : MonoBehaviour
 {
+    public void loadOnePlayer()
+    {
+        SceneManager.LoadScene("pongSolo");
+    }
+
     public void loadTwoPlayer()
     {
         SceneManager.LoadScene("pongBasic");
     }
 
-    public void loadOnePlayer()
+    public void loadSpecialMode()
     {
         SceneManager.LoadScene("pongTwist");
     }

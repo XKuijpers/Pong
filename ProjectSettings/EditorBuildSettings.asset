@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pongAtari.unity
     guid: 9c3c35820a62f0744a40727d3bdd098c
+  - enabled: 1
+    path: Assets/Scenes/pongSolo.unity
+    guid: 54eedc49c6f1ade4c8c38b4150f688e0
   m_configObjects: {}

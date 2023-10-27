@@ -15,6 +15,8 @@ public class collision : MonoBehaviour
     public int leftScore = 0;
     public int rightScore = 0;
     public int winScore = 10;
+    public AudioSource source;
+    public AudioClip clip;
     void resetBall()
     {
         xPosition = 0f;
@@ -57,18 +59,21 @@ public class collision : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("verticalL"))
         {
+            source.PlayOneShot(clip);
             resetBall();
             rightScore++;
             scoreText.text = leftScore + " | " + rightScore;
         }
         else if (collision.gameObject.CompareTag("verticalR"))
         {
+            source.PlayOneShot(clip);
             resetBall();
             leftScore++;
             scoreText.text = leftScore + " | " + rightScore;
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+            source.PlayOneShot(clip);
             xSpeed = xSpeed * -1.1f;
         }
     }

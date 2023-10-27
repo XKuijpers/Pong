@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEditor;
 using UnityEngine;
 using TMPro;
+using static Unity.VisualScripting.Member;
 
 public class atariBall : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class atariBall : MonoBehaviour
     public TMP_Text scoreText;
     public int yourScore = 0;
     public int winScore = 90;
+    public AudioSource source;
+    public AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
@@ -48,20 +51,24 @@ public class atariBall : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("atariBrick"))
         {
+            source.PlayOneShot(clip);
             xSpeed = xSpeed * -1f;
             yourScore = yourScore + 5;
             scoreText.text = yourScore + "/90";
         }
         else if (collision.gameObject.CompareTag("verticalL"))
         {
+            source.PlayOneShot(clip);
             scoreText.text = "You've lost the game!";
         }
         else if (collision.gameObject.CompareTag("verticalR"))
         {
+            source.PlayOneShot(clip);
             xSpeed = xSpeed * -1f;
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+            source.PlayOneShot(clip);
             xSpeed = xSpeed * -1.1f;
         }
     }
