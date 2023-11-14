@@ -42,12 +42,16 @@ public class collision : MonoBehaviour
             scoreText.text = "Left player has won!";
             xPosition = 0f;
             yPosition = 0f;
+            xSpeed = 0f;
+            ySpeed = 0f;    
         }
         else if (rightScore >= winScore)
         {
             scoreText.text = "Right player has won!";
             xPosition = 0f;
             yPosition = 0f;
+            xSpeed = 0f;
+            ySpeed = 0f;
         }
     }
 
